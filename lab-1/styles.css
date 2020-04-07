@@ -1,0 +1,29 @@
+.contact 
+{
+  color:  rgb(207, 116, 131);
+}
+
+#nav ul{
+    list-style-type: none;
+    float: right;
+  }
+    #nav li{
+      display: inline-block;
+    }
+      #nav a{
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        margin-right: 15px;
+        line-height: 2px;
+        display: inline-block;
+      }
+
+h2 {
+  text-align: center;
+}      
+p {
+  color:rgb(207, 116, 131);
+  text-align: center;
+}
+
