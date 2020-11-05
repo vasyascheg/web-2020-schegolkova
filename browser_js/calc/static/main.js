@@ -64,7 +64,7 @@ function tokenize(str) {
 // (https://ru.wikipedia.org/wiki/Алгоритм_сортировочной_станции).
 
 function compile(str) {
-    let out = []; //Переменная, объявленная через let, видна только в рамках блока, в котором объявлена
+    let out = [];
     let stack = [];
     for (token of tokenize(str)) {
         if (isNumeric(token)) {
