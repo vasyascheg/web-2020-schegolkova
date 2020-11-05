@@ -1,0 +1,47 @@
+body{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color:rgba(4, 64, 99, 0.432);
+	text-overflow: ellipsis;
+	line-height: 3;
+}
+.mainImg{
+	height: 250px;
+    object-fit: cover;
+}
+
+#demonstration, #contacts{
+	background-color: #fff562f8;
+}
+
+
+
+#img1
+{
+	border-radius: 50%;
+	border-style: hidden;
+}
+
+#img2
+{
+	margin-top: 40px;
+	border-radius: 50%;
+	border-style: hidden;
+}
+
+.logo
+{
+	height: 50px;
+	margin-right: 10px;
+}
+
+#secondRow
+{
+	background-color: rgb(157, 240, 175);
+}
+
+#footer
+{
+	color: rgba(4, 64, 99, 0.432);
+	background-color: rgb(157, 240, 175);
+	font-family: 'PT Serif', serif;
+}
