@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="sources/index.css">
+   <script src="sources/main.js" defer></script>
+   <title>Экзаменационный сайт</title>
+ </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-egg-fried" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M13.665 6.113a1 1 0 0 1-.667-.977L13 5a4 4 0 0 0-6.483-3.136 1 1 0 0 1-.8.2 4 4 0 0 0-3.693 6.61 1 1 0 0 1 .2 1 4 4 0 0 0 6.67 4.087 1 1 0 0 1 1.262-.152 2.5 2.5 0 0 0 3.715-2.905 1 1 0 0 1 .341-1.113 2.001 2.001 0 0 0-.547-3.478zM14 5c0 .057 0 .113-.003.17a3.001 3.001 0 0 1 .822 5.216 3.5 3.5 0 0 1-5.201 4.065 5 5 0 0 1-8.336-5.109A5 5 0 0 1 5.896 1.08 5 5 0 0 1 14 5z"/>
+            <circle cx="8" cy="8" r="3"/>
+          </svg>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#info">Информация<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#select">Тип заведения</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#menu">Меню</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#options">Дополнительные опции</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+        <strong>Попробуйте наши новые блюда!</strong> 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
+
+      <section class="carus mx-auto">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+        
+        <img src="sources/pics/carousel_1.1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block" id="info">
+            <h3>Доставка готовых блюд по Москве</h3>
+            </div>
+        </div>
+        <div class="carousel-item">
+        
+        <img src="sources/pics/carousel_2.2.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h3>Еда на любой вкус</h3>
+            </div>
+       
+        </div>
+        <div class="carousel-item">
+        
+        <img src="sources/pics/carousel_3.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h3>Всегда рады вашим заказам</h3>
+            </div>
+        
+        </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
+        </div>
+        </section>
+
+
+
+        <div id="info" class="info container-fluid">
+
+            <div class="row">
+    
+                <div class="col-md-4 text-center infBox">
+                    <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-basket2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 10a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 1 1 2 0v2a1 1 0 0 1-2 0v-2z"/>
+                        <path fill-rule="evenodd" d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-.623l-1.844 6.456a.75.75 0 0 1-.722.544H3.69a.75.75 0 0 1-.722-.544L1.123 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.163 8l1.714 6h8.246l1.714-6H2.163z"/>
+                      </svg>
+                    <p>Широкий ассортимент</p>
+                </div>
+    
+                <div class="col-md-4 text-center infBox">
+                    <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-alarm" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1h-3zm1.038 3.018a6.093 6.093 0 0 1 .924 0 6 6 0 1 1-.924 0zM8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5zM0 3.5c0 .753.333 1.429.86 1.887A8.035 8.035 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5zM13.5 1c-.753 0-1.429.333-1.887.86a8.035 8.035 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1z"/>
+                      </svg>
+                    <p>Доставка в строго указанное время</p>
+                </div>
+    
+                <div class="col-md-4 text-center infBox">
+                    <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-bug" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M4.355.522a.5.5 0 0 1 .623.333l.291.956A4.979 4.979 0 0 1 8 1c1.007 0 1.946.298 2.731.811l.29-.956a.5.5 0 1 1 .957.29l-.41 1.352A4.985 4.985 0 0 1 13 6h.5a.5.5 0 0 0 .5-.5V5a.5.5 0 0 1 1 0v.5A1.5 1.5 0 0 1 13.5 7H13v1h1.5a.5.5 0 0 1 0 1H13v1h.5a1.5 1.5 0 0 1 1.5 1.5v.5a.5.5 0 1 1-1 0v-.5a.5.5 0 0 0-.5-.5H13a5 5 0 0 1-10 0h-.5a.5.5 0 0 0-.5.5v.5a.5.5 0 1 1-1 0v-.5A1.5 1.5 0 0 1 2.5 10H3V9H1.5a.5.5 0 0 1 0-1H3V7h-.5A1.5 1.5 0 0 1 1 5.5V5a.5.5 0 0 1 1 0v.5a.5.5 0 0 0 .5.5H3c0-1.364.547-2.601 1.432-3.503l-.41-1.352a.5.5 0 0 1 .333-.623zM4 7v4a4 4 0 0 0 3.5 3.97V7H4zm4.5 0v7.97A4 4 0 0 0 12 11V7H8.5zM12 6H4a3.99 3.99 0 0 1 1.333-2.982A3.983 3.983 0 0 1 8 2c1.025 0 1.959.385 2.666 1.018A3.989 3.989 0 0 1 12 6z"/>
+                      </svg>
+                    <p>Еда на любой вкус</p>
+                </div>
+    
+                <div class="col-md-4 text-center infBox">
+                    <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-clipboard" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                        <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                      </svg>
+                    <p>Простое оформление заказа</p>
+                </div>
+    
+                <div class="col-md-4 text-center infBox">
+                    <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-star" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                      </svg>
+                    <p>Высокое качество</p>
+                </div>
+    
+                <div class="col-md-4 text-center infBox">
+                    <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-emoji-smile" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path fill-rule="evenodd" d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683z"/>
+                        <path d="M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+                      </svg>
+                    <p> Бесконтактная оплата</p>
+                </div>
+    
+            </div>
+            <section class="container-fluid pt-3 chooseRest">
+
+  
+              <h2 class="text-center pt-5 mt-5"><a id="select">Выбор предприятия общественного питания</a></h2>
+                      
+              
+                          <form class="container text-center mt-3 w-75 ">
+                              <div id="action_form">
+                                  <div class="form-group">
+                                      <div class="container">
+                          
+                                          <div class="row">
+                                            
+                                            <div class="col-sm mt-3">
+                                          <label for="inputAdm">Административный округ</label>
+                                          <select id="sel1" class="form-control form-control">
+                                              <option selected>не выбрано</option>
+                                          </select>
+                                          </div>
+          
+                                      <div class="col-sm mt-3">
+                                          <label for="inputDistrict">Район</label>
+                                          <select id="sel2" class="form-control form-control">
+                                              <option selected>не выбрано</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-sm mt-3">
+                                          <label for="inputTypeObject">Тип заведения</label>
+                                          <select id="sel3" class="form-control form-control">
+                                              <option selected>не выбрано</option>
+                                          </select>
+                                      </div>
+                                      <div class="col-sm mt-3">
+                                          <label for="exampleFormControlSelect4">Соц. скидки</label>
+                                          <select class="form-control" id="sel4" name="sales">
+                                            <option>не выбрано</option>
+                                            <option value=0>Нет</option>
+                                            <option value=1>Есть</option>
+                                          </select>
+                                        </div>
+                                        <div class="col-sm-6  mt-3">
+                                  <button id="butN" type="button" class="btn btn-search btn-lg btn-light mt-4 mb-3 mar"
+                                    >Найти</button>
+                              </div>
+                                  </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              
+                          </form>
+                          <h2 class="text-center pt-5 mt-5"><a id="предприятие">Список заведений</a></h2>
+                          
+                          <div class="container-fluid overflow-auto">
+              <table class="table table-borderless table-striped">
+                  <thead>
+                  <tr>
+                      <th scope="col">Название</th>
+                      <th scope="col">Тип</th>
+                      <th scope="col">Адрес</th>
+                      <th scope="col">Рейтинг</th>
+                      <th scope="col">Действия</th>
+                  </tr>
+                  </thead>
+                  <tbody id="tb2">
+                  <div class="container col-md-12 col-xs-1">
+                      <tr>
+                      </tr>
+                  </div>
+                  </tbody>
+              </table>
+          </div>
+          <ul id="pagination">
+          </ul>
+                             
+        </section>
+    
+    
+     
+
+
+        
+            
+        <section class="container-fluid">
+            <h2 class="text-center pt-5 mt-5"><a id="menu">Меню</a></h2>
+            <hr сlass="mt-auto" color="#d7d7d7">
+            <div id="card1" class="row"></div>
+        </section>
+              
+                      
+          
+          
+                  
+                  <h3 class="text-center" id="options">Дополнительные опции заказа </h3>
+          
+                  
+                    
+                      <div class="container text-center col-sm-12 col-md-6 col-md-offset-2 col-lg-6">
+                          <h4 class="mt-5">К заказу можно применить только 2 дополнительные опции:</h4>
+                          <ul class=" list-group mb-3">
+                
+                              <li class="list-group-item d-flex justify-content-center lh-condensed ">
+                                  <div class="w-100 text-center">
+                                      <h6 class="w-100">Хочу подарок</h6>
+                                      <small class="text-muted">В заказ добавляется случайный сет.</small>
+                                  </div>
+                                  <span class="text-muted">
+                              <input class="form-check-input" type="checkbox" name="exampleCheckboxes" id="exCheck3">
+                          </span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-center lh-condensed">
+                                  <div class="w-100 text-center">
+                                      <h6 class="w-100">В два раза больше</h6>
+                                      <small class="text-muted">Количество всех заказанных сетов увеличивается в 2 раза. Цена
+                                          увеличивается на 60%</small>
+                                  </div>
+                                  <span class="text-muted">
+                              <input class="form-check-input" type="checkbox" name="exampleCheckboxes" id="exCheck4">
+                          </span>
+                    
+                              
+                                 
+                          </ul>
+                          
+                          <button onclick="modalClick()" type="button" class="w-50 container text-center btn btn-primary btn-lg btn-block"
+                                  data-toggle="modal"
+                                  data-target=".bd-example-modal-lg" id="modal_window" style="background:#eb6810;">Оформить заказ
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+               aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h2 class="modal-title" id="exampleModalLabel" style="font-weight:bold">Оформление
+                              заказа</h2>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <h7 style="font-weight:bold">Выбранные позиции</h7>
+                          <table class="table table-sm">
+                              <thead class="thread-light">
+                              <tr>
+                                  <th class="col-1">#</th>
+                                  <th class="col-5">Название</th>
+                                  <th class="col-2">цена</th>
+                                  <th class="col-2">количество</th>
+                                  <th class="col-2">сумма</th>
+                              </tr>
+                              </thead>
+                              <tbody id="modal_positions">
+          
+                              </tbody>
+                          </table>
+                          <hr>
+                          <h7 style="font-weight:bold">Дополнительные опции</h7>
+                          <ul id="choosed"></ul>
+                          <hr>
+                          <h5 style="font-weight:bold">Информация о предприятии</h5>
+                          <div class="container themed-container">
+                              <div class="row mb-3">
+                                  <div class="col-6 themed-grid-col">Название</div>
+                                  <div class="col-6 themed-grid-col" id="modal_name"></div>
+          
+                              </div>
+                              <div class="row mb-3">
+                                  <div class="col-6 themed-grid-col">Административный округ</div>
+                                  <div class="col-6 themed-grid-col" id="modal_admArea"></div>
+          
+                              </div>
+                              <div class="row mb-3">
+                                  <div class="col-6 themed-grid-col">Район</div>
+                                  <div class="col-6 themed-grid-col" id="modal_district"></div>
+          
+                              </div>
+                              <div class="row mb-3">
+                                  <div class="col-6 themed-grid-col">Адрес</div>
+                                  <div class="col-6 themed-grid-col" id="modal_address"><small
+                                          class="text-muted"></small></div>
+          
+                              </div>
+                              <div class="row mb-3">
+                                  <div class="col-6 themed-grid-col">Рейтинг</div>
+                                  <div class="col-6 themed-grid-col" id="modal_rate"></div>
+          
+                              </div>
+                          </div>
+                          <hr>
+          
+                          <h5 style="font-weight:bold">Доставка</h5>
+                          <div class="container themed-container">
+                              <div class="row mb-3">
+                                  <div class="col-6 themed-grid-col">Зона Доставки:</div>
+                                  <div class="col-6 themed-grid-col">
+                                      <select class="form-control"
+                                              style=" border: 1px solid #6b6a6a; box-shadow: none;">
+                                          <option selected>Выберите зону</option>
+                                          <option>Первая зона</option>
+                                          <option>Вторая зона</option>
+                                      </select>
+                                  </div>
+                              </div>
+          
+                              <div class="row mb-3">
+                                  <div class="col-6 themed-grid-col">Адрес Доствки</div>
+                                  <div class="col-6 themed-grid-col"><textarea class="form-control"
+                                                                               id="exampleFormControlTextarea1"
+                                                                               rows="3"
+                                                                               style=" border: 1px solid #6b6a6a; box-shadow: none;"></textarea>
+                                  </div>
+                              </div>
+          
+                              <div class="row mb-3">
+                                  <div class="col-6 themed-grid-col">Стоимость доставки</div>
+                                  <div class="col-6 themed-grid-col">300 руб.</div>
+                              </div>
+          
+                              <div class="row mb-3">
+                                  <div class="col-6 themed-grid-col">ФИО получателя</div>
+                                  <div class="col-6 themed-grid-col">
+                                      <input type="text" class="form-control"
+                                             aria-label="Small"
+                                             aria-describedby="inputGroup-sizing-sm"
+                                             size="2"
+                                             style=" border: 1px solid #6b6a6a; box-shadow: none;"
+                                             placeholder="Введите ФИО..."></div>
+                              </div>
+                          </div>
+                          <hr>
+                      </div>
+                      <hr>
+                      <div class="container themed-container">
+                          <div class="row mb-3">
+                              <div class="col-3 themed-grid-col" align="left">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Отменить
+                                  </button>
+                              </div>
+          
+                              <div class="col-6 themed-grid-col" id="itog" align="center">
+          
+                              </div>
+                              <div class="col-3 themed-grid-col" align="right">
+                                  <button type="button" class="btn btn-success" style="background:#4e0606;">Оплатить
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="container">
+              <section style="height:80px;"></section>
+              <div class="row" style="text-align:center;">
+                  <!----------- Footer ------------>
+                  <footer>
+
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm">
+                          <h6>Ждем гостей каждый день!</h6>
+                          <div class="mt-5">
+                          <svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-emoji-wink" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path fill-rule="evenodd" d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683z"/>
+                            <path d="M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5z"/>
+                            <path fill-rule="evenodd" d="M8.757 6.063a.5.5 0 0 1 .68.194.934.934 0 0 0 .813.493c.339 0 .645-.19.813-.493a.5.5 0 1 1 .874.486A1.934 1.934 0 0 1 10.25 7.75c-.73 0-1.356-.412-1.687-1.007a.5.5 0 0 1 .194-.68z"/>
+                          </svg>
+                          </div>
+                        </div>
+                        <div class="col-sm">
+                          <h6>О нас</h6>
+                              Доставка еды — услуга, при которой заказчику доставляют еду по указанному им адресу за определённый период времени. 
+                              Заказ обычно совершается по телефону или интернету.
+                        </div>
+                        <div class="col-sm ">
+                          <h6>Контакты</h6>
+
+                          <ul class="list-group">
+                            <li class="list-group-item list-group-item-success"><a href="https://vk.com/vasyascheg">VK</a></li>
+                            <li class="list-group-item list-group-item-success"><a href="https://www.instagram.com/vasyascheg/?hl=ru">Instagram</a></li>
+                            <li class="list-group-item list-group-item-success"><a href="https://vsco.co/vasyascheg/gallery">VSCO</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+                      
+                      </div>
+                  </footer>
+                  <section style="text-align:center; margin:10px auto;">
+                      <p><strong>© 2020, Все права защищены</strong></p></p></section>
+          
+              </div>
+          
+          
+          </div>
+          
+          
+                  <!-- Optional JavaScript -->
+                  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+                  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+                  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+                 <!-- <script src="jquery-3.5.1.slim.min.js"></script>
+                  <script src="popper.min.js"></script>
+                  <script src="bootstrap.min.js"></script>-->
+              </div>
+
+    
+  </body>
+
+</html>
