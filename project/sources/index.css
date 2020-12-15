@@ -1,0 +1,37 @@
+.carus{
+    margin-top:auto;
+    }
+   
+body{
+    background-color: rgb(224, 222, 222);
+  }
+
+.navbarcolor{
+    background-color: rgb(224, 222, 222);
+    display: flex;
+    
+  }
+
+a{
+    text-decoration:none;
+    color: black;        /*цвет текста в списке контактов*/
+  }
+ 
+.chooseRest{
+    border: 1px #A9A9A9;  /*цвет рамочки в выборе предприятия*/
+    border-style: solid;
+    background-color: rgb(173, 216, 230); /*цвет фона в выборе предприятия*/
+  }
+
+form {
+    background-color: #ffbf6b; /*цвет внутреннего блока в выборе предприятия*/
+    border: 1px #A9A9A9;  /*цвет рамки*/
+    border-style: solid; 
+  }
+  
+.card { /*карточки с блюдами*/
+    width: 350px;
+    height: auto;
+  }
+
+  
