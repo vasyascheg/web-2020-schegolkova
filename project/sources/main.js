@@ -98,7 +98,7 @@ function getRestsAll() {  //загружаем список заведений
 
                         card1.innerHTML = '';
                         let obXhr = new XMLHttpRequest();
-                        obXhr.open('GET', `sources/fail.json`);
+                        obXhr.open('GET', `sources/file.json`);
 
                         obXhr.send();
 
@@ -378,7 +378,7 @@ function showPage(item) {//это начало функции заполнени
 
             card1.innerHTML = '';
             let obXhr = new XMLHttpRequest();
-            obXhr.open('GET', `sources/fail.json`);
+            obXhr.open('GET', `sources/file.json`);
 
             obXhr.send();
 
