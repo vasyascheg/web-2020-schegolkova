@@ -99,20 +99,21 @@ function compile(str) {
 
 function evaluate(str) {
     // your code here
-    let str2 = compile(str); //Компиляция регулярного выражения
-
+    let str2 = compile(str); 
+    //alert(str2);
     let stack = [];
 
-    const operators = {  
-        '+': (x, y) => x + y,
-        '-': (x, y) => x - y,
-        '*': (x, y) => x * y,
-        '/': (x, y) => x / y
+    const operators = {  //словарь операций
+        '+': function (x, y){return x + y;},
+        '-': function (x, y){return x - y;},
+        '*': function (x, y){return x * y;},
+        '/': function (x, y){return x / y;}
     };
 
-    str2.split(' ').forEach((token) => {    //разбиваем объект string на массив строк
-        if (token in operators) {
-            let [y, x] = [stack.pop(), stack.pop()];
+    str2.split(' ').forEach((token) => {    //разбиваем строку на массив токенов и для каждого токена вызываем анон ф-цию
+        if (isOperation(token)) {    
+            let y = stack.pop();
+            let x = stack.pop();
             stack.push(operators[token](x, y));
         } else {
             stack.push(parseFloat(token));
@@ -140,19 +141,18 @@ function evaluate(str) {
 function clickHandler(event) {
     // your code here
     let target = event.target; //где был клик
-    if (target.tagName != 'BUTTON') return; //если не на кнопку пропускаем
-    let screen = document.getElementById('screen'); //возвращаем ссылку на элемент
+    if (target.tagName != 'BUTTON')
+        return; //если не на кнопку пропускаем
 
-    if ((target.textContent == '=') || (target.textContent == 'C')) {
-        if (target.textContent == '=') {
-            screen.innerHTML = evaluate(screen.textContent).toFixed(2); //форматируем числовое значение в строковое
-        }
-        if (target.textContent == 'C') {
-            screen.innerHTML = null;  //сброс
-        }
-    } else {
+    let screen = document.getElementById('screen'); //объявляем ссылку на элемент
+
+    if (target.textContent == '=') 
+        screen.innerHTML = evaluate(screen.textContent).toFixed(2); //форматируем числовое значение в строковое
+    else if (target.textContent == 'C')
+        screen.innerHTML = null;  //сброс
+    else 
         screen.innerHTML = screen.textContent + target.textContent;
-    }
+
 }
 
 
@@ -162,3 +162,4 @@ window.onload = function () {
     let calc = document.getElementById('calc');
     calc.onclick = clickHandler;
 }
+
