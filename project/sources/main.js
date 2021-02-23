@@ -6,6 +6,9 @@ let sel4 = document.getElementById('sel4');
 let card1 = document.getElementById('card1'); //карточки с блюдами
 let items = document.querySelector('#pagination'); //кнопки пагинатора
 
+let cardsArr;
+let currentRest;
+let prices = [];
 let restsAll; // массив всех заведений
 let restsFiltered; // отфильтрованный массив заведений
 let notesOnPage = 5; //кол-во записей
@@ -33,7 +36,7 @@ function getRestsAll() {  //загружаем список заведений
                                                                                     //массива оставляем 20 записей
 
             let it = InitPagination(restsFiltered.length);// создаем кнопки пагинации (функция возвращает 1 кнопку)
-            showPage(it); //эмуляция нажатия первой кнопки (items-кнопки пагинатора) 
+            showPage(it); // нажатие первой кнопки (items-кнопки пагинатора) 
            
             initFilter('admArea',sel1); //заполняем список значений для поиска
             initFilter('district',sel2);
@@ -58,11 +61,12 @@ function getRestsAll() {  //загружаем список заведений
                                     return element;
                                 }
 
-                }).sort((a, b) => (b.rate - a.rate)).slice(0,20); // ... и сортируем его по убыванию рейтинга и оставляем первые 20 элементов
+                }).sort((a, b) => (b.rate - a.rate)).slice(0,20); // ... и сортируем его по убыванию рейтинга 
+                                                                  //и оставляем первые 20 элементов
                 
                 //console.log(restsFiltered);
             
-                let it = InitPagination(restsFiltered.length); //обновление кнопок пагинации (тк их кол-во может измениться после фильтрации)
+                let it = InitPagination(restsFiltered.length); //обновление кнопок пагинации 
                 showPage(it); //перевывод первой страницы
             }
         }
@@ -77,12 +81,14 @@ function onClickIncrease(b){ //обработчик кнопки + в карто
     let v = b.parentElement.parentElement.querySelector('input'); //передается
     if (v.value <= 9)
         ++v.value;
+    calcTotalSum();
 }
 
 function onClickDecrease(b){ //обработчик кнопки - в карточках меню
     let v = b.parentElement.parentElement.querySelector('input');
     if (v.value > 0) 
         --v.value;
+    calcTotalSum();
 }
 
 function uniqueArr(arr) { //получает массив, возвращает новый массив без повторов и отсортированный
@@ -97,7 +103,8 @@ function uniqueArr(arr) { //получает массив, возвращает 
     return res;
   };
   
-function initFilter(fieldName, selId){  //fieldname-получаем поле в структуре данных из котоорого мы получаем выборку, selid-идентификатор селектора(выпдаающего списка)
+function initFilter(fieldName, selId){  //fieldname-получаем поле в структуре данных из котоорого мы получаем выборку, 
+                                        //selid-идентификатор селектора(выпдаающего списка)
     //initFilter('admArea',sel1); //заполняем список значений для поиска
     //initFilter('district',sel2);
     //initFilter('typeObject',sel3);
@@ -178,6 +185,16 @@ function showPage(item) {//это начало функции заполнени
     for (let element of button_choose) { //на каждую кнопку выбрать навешиваем обработчик
         element.onclick = () => { 
 
+            //сохраняем количество блюд
+            let countDishes = [];
+            for (let i = 0; i < 10; i++){
+                let e = document.getElementById('countDishes' + i);
+                if (e == undefined)
+                    countDishes.push(0);
+                else
+                    countDishes.push(e.value);
+            }
+
             card1.innerHTML = '';
             let obXhr = new XMLHttpRequest();
             obXhr.open('GET', `sources/file.json`);
@@ -193,8 +210,7 @@ function showPage(item) {//это начало функции заполнени
 
                 if (obXhr.response) { 
                     let card1 = document.getElementById('card1');
-                    let result1 = JSON.parse(obXhr.response); //получили массив карточек меню
-                    //let ca1;
+                    cardsArr = JSON.parse(obXhr.response); //получили массив карточек меню
 
                     //в них записываются данные из той строки где находится кнопка выбрать 
                     let name_pr = String(element.parentNode.firstElementChild.innerHTML);
@@ -208,13 +224,13 @@ function showPage(item) {//это начало функции заполнени
                             need_obj = element; 
                         }    
                     })
-                    
-                    let prices = [];
+                    currentRest =  need_obj; //запись с текущим заведением
+                    prices = [];
                     for (let i = 1; i <= 10; i++) { // заполняем массив цен по имени свойствам set_1...set_10
                         prices.push(need_obj['set_'+i]);   
-                        }
+                    }
                       
-                    for (let i = 0; i < result1.length; i++) {
+                    for (let i = 0; i < cardsArr.length; i++) {
                         //console.log(result1[i])
                         let ca1 = document.createElement('div');
                         
@@ -224,16 +240,16 @@ function showPage(item) {//это начало функции заполнени
                         <div class="m-3" style="background-color:#ADD8E6; border:1px; border-style:solid; border-color:#A9A9A9;" >
                           <div class="card-body">
                             <div class="container " name="cardDish">
-                              <img src="${result1[i].image}" class="bd-placeholder-img card-img-top" width="100%" height="200">
-                              <div><h5>${result1[i].name} - ${prices[i]} &#x20bd </h5></div>
+                              <img src="${cardsArr[i].image}" class="bd-placeholder-img card-img-top" width="100%" height="200">
+                              <div><h5>${cardsArr[i].name} - ${prices[i]} &#x20bd </h5></div>
 
-                              <div class="row" style = "height:70px;"><h6 style="color: black">${result1[i].description}</h6></div>
+                              <div class="row" style = "height:70px;"><h6 style="color: black">${cardsArr[i].description}</h6></div>
                               <div class="btn-group">
                                 <div class="input-group input-group-sm mb-3">
                                   <div class="input-group-prepend">
                                     <button type="button" class=" decrease btn btn-sm btn-outline-secondary" onclick="onClickDecrease(this)">-</button>
                                   </div>
-                                    <input type="text" class="form-control" readonly aria-label="Small" aria-describedby="inputGroup-sizing-sm" size="2" style=" background: white; border: 1px solid #6b6a6a; " value="0">
+                                    <input id="countDishes${i}" type="text" class="form-control" readonly aria-label="Small" aria-describedby="inputGroup-sizing-sm" size="2" style=" background: white; border: 1px solid #6b6a6a; " value="${countDishes[i]}">
                                     <div class="input-group-append">
                                     <button type="button" class=" increase btn btn-sm btn-outline-secondary" onclick="onClickIncrease(this)">+</button>
                                     </div>
@@ -246,8 +262,78 @@ function showPage(item) {//это начало функции заполнени
                         
                         card1.append(ca1);  //добавляем карточку
                     }
+                    calcTotalSum();
                 }
             }
         }
     }
+}
+
+
+function calcTotalSum(){
+    let sum = 0;
+    for ( let i=0; i < 10; i++){
+        sum = sum + prices[i]* document.getElementById('countDishes' + i).value;
+    }
+    document.getElementById('total').innerText = sum;
+}
+
+//Функция для модального окна оформления заказа
+function modalClick(){
+    let pos = document.getElementById('modal_positions');
+    let opt = document.getElementById('choosed');
+    let opt1 = document.getElementById('opt1').checked;
+    let opt2 = document.getElementById('opt2').checked;
+    pos.innerHTML = '';
+    opt.innerHTML = '';
+    let sum = 0;
+    let gift;
+    if (opt1)
+        gift = getRandomInt(10);
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+      }
+
+    for ( let i=0; i < 10; i++){
+        let cnt = +document.getElementById('countDishes' + i).value;
+        let tot =  cnt * prices[i]; 
+        if (opt2){
+            cnt = cnt*2;
+            tot = 1.6*tot;
+        }
+        if (opt1 && (i==gift))
+            cnt = cnt + 1;
+        if (cnt > 0){
+            let pr = cnt + ' x ' + prices[i];  
+            pos.innerHTML = pos.innerHTML +
+            `<tr>  
+            <td><h5>${cardsArr[i].name}</h5></td>
+            <td>${pr} &#x20bd</td>
+            <td align="right"><h5>${tot.toFixed(0)} &#x20bd</h5></td>
+            </tr>`;
+            sum = sum + tot; 
+        }
+        
+    }
+    if (opt1){
+        opt.innerHTML = opt.innerHTML +
+        `<tr>  
+            <td><h5>Хочу подарок</h5></td>   
+        </tr>`; 
+    }
+    if (opt2){
+        opt.innerHTML = opt.innerHTML +
+        `<tr>  
+            <td><h5>В 2 раза больше</h5></td>   
+        </tr>`; 
+    }
+    document.getElementById('modal_name').innerText = currentRest.name;
+    document.getElementById('modal_admArea').innerText = currentRest.admArea;
+    document.getElementById('modal_district').innerText = currentRest.district;
+    document.getElementById('modal_address').innerText = currentRest.address;
+    document.getElementById('modal_rate').innerText = currentRest.rate;
+
+    document.getElementById('modal_total').innerText = sum.toFixed(0);
+
+    $('#Order').modal('show');
 }
