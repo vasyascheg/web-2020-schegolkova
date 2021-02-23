@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Bootstrap CSS -->
+
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="sources/admin.css">
+   <link rel="stylesheet" type="text/css" href="sources/index.css"> 
+   
+   <script src="sources/admin.js" defer></script>
+   <title>Админка</title>
+ </head>
+
+ <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-egg-fried" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M13.665 6.113a1 1 0 0 1-.667-.977L13 5a4 4 0 0 0-6.483-3.136 1 1 0 0 1-.8.2 4 4 0 0 0-3.693 6.61 1 1 0 0 1 .2 1 4 4 0 0 0 6.67 4.087 1 1 0 0 1 1.262-.152 2.5 2.5 0 0 0 3.715-2.905 1 1 0 0 1 .341-1.113 2.001 2.001 0 0 0-.547-3.478zM14 5c0 .057 0 .113-.003.17a3.001 3.001 0 0 1 .822 5.216 3.5 3.5 0 0 1-5.201 4.065 5 5 0 0 1-8.336-5.109A5 5 0 0 1 5.896 1.08 5 5 0 0 1 14 5z"/>
+            <circle cx="8" cy="8" r="3"/>
+          </svg>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="../index.html">Вернуться на главную страницу<span class="sr-only">(current)</span></a>
+            </li>    
+          </ul>
+        </div>
+      </nav>
+
+      <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+        <strong>Попробуйте наши новые блюда!</strong> 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <section>
+        <h2 class="text-center mt-5"><a id="select">Предприятия общественного питания города Москвы</a></h2>
+      </section>
+
+     
+
+    <div class="container mt-5">
+      <form class="p-3">
+        <div class="form-row">
+          <div class="col-md-9 mb-3">
+            <label for="Name">Наименование</label>
+            <input type="text" class="form-control" id="Name">
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="Area">Административный округ</label>
+            <select class="custom-select" id="Area">
+              <option selected value="">Не выбрано</option>
+            </select>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="Seats">Количество посадочных мест</label>
+            
+           <div class="form-row">
+            <label for="SeatFrom" class="ml-2 mr-3">от</label>
+            <div class="col-md-5 mb-3"> 
+              <input type="number" class="form-control" id="SeatFrom" min="0"
+                name="seatsCount1" />
+            </div>
+            <label for="SeatTo" class="ml-2 mr-3">до</label>
+            <div class="col-md-5 mb-3"> 
+              <input type="number" class="form-control" id="SeatTo" min="0"
+                name="seatsCount1" />
+            </div> 
+           </div>
+             </div>
+
+
+          <div class="col-md-3 mb-3">
+            <label for="isNET">Является сетевым</label>
+            <select class="custom-select" id="isNET" name="isNetObject" value="">
+              <option selected value="">Не выбрано</option>
+              <option value="1">Есть</option>
+              <option value="0">Нет</option>
+            </select>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="District">Район</label>
+            <select class="custom-select" id="District">
+              <option selected value="">Не выбрано</option>
+            </select>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="Seats">Дата создания</label>
+            
+           <div class="form-row">
+            <label for="DateFrom" class="ml-2 mr-3">от</label>
+            <div class="col-md-5 mb-3"> 
+              <input type="date" class="form-control" id="DateFrom"
+                name="seatsCount1" />
+            </div>
+            <label for="DateTo" class="ml-2 mr-3">до</label>
+            <div class="col-md-5 mb-3"> 
+              <input type="date" class="form-control" id="DateTo"
+                name="seatsCount1" />
+            </div> 
+           </div>
+             </div>
+
+
+          <div class="col-md-3 mb-3">
+            <label for="Social">Льготы</label>
+            <select class="custom-select" id="Social"  value="">
+              <option selected value="">Не выбрано</option>
+              <option value="1">Есть</option>
+              <option value="0">Нет</option>
+            </select>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="Type">Вид объекта</label>
+            <select class="custom-select" id="Type">
+              <option selected value="">Не выбрано</option>
+            </select>
+          </div>
+        </div>
+
+
+
+
+        <div class="text-center">
+        <a class="btn btn-light" onclick="filter()" id="btnFind">Найти</a>
+        </div>
+      </form>
+
+
+<!-- тестовая -->
+<table id="table"  data-show-header="true" data-pagination="true" class="table table-borderless table-striped"
+data-id-field="id" data-pagination-h-align="left" >
+
+<thead>
+<tr>
+<th data-field="name">Название</th>
+<th data-field="typeObject">Тип</th>
+<th data-field="address">Адрес</th>
+<th data-field="id" data-formatter="idFormatter">Действия</th>
+
+
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+
+
+<div class="float-right">
+  <button class="btn btn-primary" onclick="addRest()">Добавить предприятие</button>
+</div>
+
+
+
+<!--Модальное окно просмотра записи-->
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            <span aria-hidden="true">&times;</span>
+        </div>
+
+        <div class="modal-body">
+          <table id="dataTable">
+
+          </table>
+        </div>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn close" data-dismiss="modal">Закрыть</button>
+      </div>
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+<!--Модальное окно создания и редактирования записи-->
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="Title">Редактирование данных</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            <span aria-hidden="true">&times;</span>
+        </div>
+
+        <div class="modal-body" style="overflow-y: scroll; max-height:450px">
+          <form class="adminform">
+            <div class="form-group">
+              <label for="name" class="col-form-label">Наименование</label>
+              <input type="text" class="form-control" id="name">
+            </div>
+
+
+            <div class="form-group">
+              <div>  
+                <label for="" class="col-form-label">Является сетевым</label> 
+              </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="isNetObject1" name="isNetObject" class="custom-control-input">
+              <label class="custom-control-label" for="isNetObject1">Да</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="isNetObject0" name="isNetObject" class="custom-control-input">
+              <label class="custom-control-label" for="isNetObject0">Нет</label>
+            </div>
+          </div>
+
+
+
+
+
+
+
+            <div class="form-group">
+              <label for="operatingCompany" class="col-form-label">Название управляющей компании</label>
+              <input type="text" class="form-control" id="operatingCompany">
+            </div>
+
+            <div class="form-group">
+              <label for="typeObject" class="col-form-label">Вид объекта</label>
+              <input type="text" class="form-control" id="typeObject">
+            </div>
+
+            <div class="form-group">
+              <label for="admArea" class="col-form-label">Административный округ</label>
+              <input type="text" class="form-control" id="admArea">
+            </div>
+
+            <div class="form-group">
+              <label for="district" class="col-form-label">Район</label>
+              <input type="text" class="form-control" id="district">
+            </div>
+
+            <div class="form-group">
+              <label for="address" class="col-form-label">Адрес</label>
+              <textarea  class="form-control" id="address"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="seatsCount" class="col-form-label">Число посадочных мест</label>
+              <input type="text" class="form-control" id="seatsCount">
+            </div>
+
+
+            <div class="form-group">
+              <div>  
+                <label for="" class="col-form-label">Показатель социальных льгот</label> 
+              </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="socialPrivileges1" name="socialPrivileges" class="custom-control-input">
+              <label class="custom-control-label" for="socialPrivileges1">Да</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="socialPrivileges0" name="socialPrivileges" class="custom-control-input">
+              <label class="custom-control-label" for="socialPrivileges0">Нет</label>
+            </div>
+          </div> 
+
+
+
+            <div class="form-group">
+              <label for="publicPhone" class="col-form-label">Телефон</label>
+              <input type="text" class="form-control" id="publicPhone">
+            </div>
+
+            
+            
+          </form>
+        </div>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn close" data-dismiss="modal">Отмена</button>
+        <button type="button" id="buttonSave" class="btn close" data-dismiss="modal">Сохранить</button>
+      </div>
+
+
+
+      </div>
+  </div>
+</div>
+
+<!--Модальное окно для удления записи!-->
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Удаление записи</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="deleteRest">
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="deleteButton" class="btn btn-secondary" data-dismiss="modal">Да</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Нет</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--Модальное окно для сообщения об ошибке или о чем-то другом-->
+
+<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="alertModalTitle">Удаление записи</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="alertModalText">
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <section style="height:80px;"></section>
+  <div class="row" style="text-align:center;">
+      <!----------- Footer ------------>
+      <footer>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <h6>Ждем гостей каждый день!</h6>
+              <div class="mt-5">
+              <svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-emoji-wink" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path fill-rule="evenodd" d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683z"/>
+                <path d="M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5z"/>
+                <path fill-rule="evenodd" d="M8.757 6.063a.5.5 0 0 1 .68.194.934.934 0 0 0 .813.493c.339 0 .645-.19.813-.493a.5.5 0 1 1 .874.486A1.934 1.934 0 0 1 10.25 7.75c-.73 0-1.356-.412-1.687-1.007a.5.5 0 0 1 .194-.68z"/>
+              </svg>
+              </div>
+            </div>
+            <div class="col-sm">
+              <h6>О нас</h6>
+                  Доставка еды — услуга, при которой заказчику доставляют еду по указанному им адресу за определённый период времени. 
+                  Заказ обычно совершается по телефону или интернету.
+            </div>
+            <div class="col-sm ">
+              <h6>Контакты</h6>
+
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-success"><a href="https://vk.com/vasyascheg">VK</a></li>
+                <li class="list-group-item list-group-item-success"><a href="https://www.instagram.com/vasyascheg/?hl=ru">Instagram</a></li>
+                <li class="list-group-item list-group-item-success"><a href="https://vsco.co/vasyascheg/gallery">VSCO</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+          
+          </div>
+      </footer>
+      <section style="text-align:center; margin:10px auto;">
+          <p><strong>© 2020, Все права защищены</strong></p></p></section>
+
+  </div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+           
+
+
+
+
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
+
+                  <!-- Optional JavaScript -->
+                  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+               <!--   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
+                  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+                  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> -->
+                 <!-- <script src="jquery-3.5.1.slim.min.js"></script>
+                  <script src="popper.min.js"></script>
+                  <script src="bootstrap.min.js"></script>-->
+ </body>
+
+ </html>
