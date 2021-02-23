@@ -1,0 +1,10 @@
+.pagination-info {
+    display:none;
+}
+
+
+.adminform {
+    background-color: #ffffff; /*цвет внутреннего блока в выборе предприятия*/
+    border: 1px #A9A9A9;  /*цвет рамки*/
+    border-style: none; 
+  }
