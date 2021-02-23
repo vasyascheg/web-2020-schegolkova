@@ -34,6 +34,9 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#options">Дополнительные опции</a>
               </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../admin.html">Административная панель</a>
+              </li>
           </ul>
         </div>
       </nav>
@@ -251,8 +254,8 @@
                                       <small class="text-muted">В заказ добавляется случайный сет.</small>
                                   </div>
                                   <span class="text-muted">
-                              <input class="form-check-input" type="checkbox" name="exampleCheckboxes" id="exCheck3">
-                          </span>
+                                     <input class="form-check-input" type="checkbox" name="exampleCheckboxes" id="opt1">
+                                  </span>
                               </li>
                               <li class="list-group-item d-flex justify-content-center lh-condensed">
                                   <div class="w-100 text-center">
@@ -261,23 +264,34 @@
                                           увеличивается на 60%</small>
                                   </div>
                                   <span class="text-muted">
-                              <input class="form-check-input" type="checkbox" name="exampleCheckboxes" id="exCheck4">
-                          </span>
-                    
-                              
-                                 
-                          </ul>
-                          
-                          <button onclick="modalClick()" type="button" class="w-50 container text-center btn btn-primary btn-lg btn-block"
+                                     <input class="form-check-input" type="checkbox" name="exampleCheckboxes" id="opt2">
+                                  </span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-center lh-condensed">
+                                <table class="w-100">
+                                    <tbody>
+                                      <tr>
+                                        <td class="align-middle">
+                                            <h6>Итого: <span id="total">0</span> &#x20bd</h6>
+                                        </td>
+                                        
+                                        <td class="align-bottom">
+                                            <button onclick="modalClick()" type="button" class="w-80 container text-center btn btn-primary btn-lg btn-block"
                                   data-toggle="modal"
-                                  data-target=".bd-example-modal-lg" id="modal_window" style="background:#eb6810;">Оформить заказ
+                                   id="modal_window" style="background:#eb6810;">Оформить заказ
                           </button>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>                               
+                            </li>                                 
+                          </ul>
                       </div>
                   </div>
               </div>
           </div>
           
-          <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+          <div id="Order" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
                aria-hidden="true">
               <div class="modal-dialog modal-lg" role="document">
                   <div class="modal-content">
@@ -291,22 +305,20 @@
                       <div class="modal-body">
                           <h7 style="font-weight:bold">Выбранные позиции</h7>
                           <table class="table table-sm">
-                              <thead class="thread-light">
-                              <tr>
-                                  <th class="col-1">#</th>
-                                  <th class="col-5">Название</th>
-                                  <th class="col-2">цена</th>
-                                  <th class="col-2">количество</th>
-                                  <th class="col-2">сумма</th>
-                              </tr>
-                              </thead>
+                              
                               <tbody id="modal_positions">
           
                               </tbody>
                           </table>
                           <hr>
                           <h7 style="font-weight:bold">Дополнительные опции</h7>
-                          <ul id="choosed"></ul>
+                          <table class="table table-sm">
+                              
+                            <tbody id="choosed">
+        
+                            </tbody>
+                        </table>
+                          
                           <hr>
                           <h5 style="font-weight:bold">Информация о предприятии</h5>
                           <div class="container themed-container">
@@ -378,9 +390,11 @@
                                              placeholder="Введите ФИО..."></div>
                               </div>
                           </div>
-                          <hr>
-                      </div>
+                         
+                      
                       <hr>
+
+                      <h5 align="right" style="font-weight:bold">Итого: <span id="modal_total">0</span> &#x20bd</h5>
                       <div class="container themed-container">
                           <div class="row mb-3">
                               <div class="col-3 themed-grid-col" align="left">
@@ -400,6 +414,7 @@
                   </div>
               </div>
           </div>
+        </div>
           
           <div class="container">
               <section style="height:80px;"></section>
